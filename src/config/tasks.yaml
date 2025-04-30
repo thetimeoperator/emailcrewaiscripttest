@@ -1,0 +1,35 @@
+# Example Task Definitions (Replace with your actual tasks)
+
+research_task:
+  description: >
+    Conduct a comprehensive search for the absolute latest news, developments,
+    and discussions related to the topic: {topic}. Focus on sources from the
+    last 7 days.
+  expected_output: >
+    A curated list of URLs and brief snippets for the most relevant
+    and recent AI news articles, blog posts, and discussions.
+  # agent: researcher # Assign agent by name (must match agents.yaml)
+
+summarization_task:
+  description: >
+    Review the research findings provided. Extract the key information,
+    insights, and takeaways. Summarize these into clear, concise bullet points.
+    For each point, briefly explain its significance or context.
+  expected_output: >
+    A structured list of bullet points summarizing the essential AI news,
+    suitable for informing a newsletter draft.
+  # agent: summarizer
+  # context: [research_task] # Specify tasks whose output this task depends on
+
+newsletter_drafting_task:
+  description: >
+    Using the summarized AI news bullet points, select a compelling angle
+    or theme. Write an engaging and educational email newsletter draft.
+    The draft should be between 500 and 1000 words, providing value and
+    insights based on the latest AI news.
+  expected_output: >
+    A complete, well-formatted email newsletter draft ready for review.
+    The draft should be informative and written in an accessible tone.
+  # agent: writer
+  # context: [summarization_task]
+  # output_file: 'outputs/newsletter_draft_{timestamp}.md' # Optional: specify output file

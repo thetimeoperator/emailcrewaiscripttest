@@ -1,0 +1,24 @@
+[project]
+name = "crewai-email-newsletter"
+version = "0.1.0"
+description = "CrewAI project for automating email newsletter creation."
+authors = [
+    {name = "Your Name", email = "you@example.com"},
+]
+requires-python = ">=3.10,<4.0"
+dependencies = [
+    "crewai>=0.117.1",
+    "crewai-tools>=0.7.0",
+    "python-dotenv>=1.0.0",
+    "langchain-openai>=0.3.14",
+    "duckduckgo-search>=8.0.1",
+    # pydantic and pydantic-core might be needed explicitly if crewai doesn't specify them properly
+    "pydantic", 
+    "pydantic-core"
+]
+
+readme = "README.md"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
